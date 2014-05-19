@@ -1,0 +1,40 @@
+<h1>Listando artigos</h1> 
+
+<style>
+table, th, td 
+{ 
+  border: 1px solid black; 
+  border -collapse:collapse
+}
+th, td
+{
+  padding: 3px;
+}
+td
+{
+  text-align: center;
+}
+</style>
+
+<table style="width:300px">
+  <tr>
+    <th>Título</th>
+    <th>Texto</th>
+    <th colspan="2">Action</th>
+  </tr>
+
+  <% @blog_item.each do |a| %>
+  <tr>
+    <td><%= a.title %></td>
+    <td><%= a.text %></td>
+    <td><%= link_to 'Consultar', article_path(a) %></td>
+    <td><%= link_to 'Editar', edit_article_path(a) %></td>
+  </tr>
+  <% end %>
+</table>
+<p>
+<%= link_to 'Criar item', new_article_path %>
+
+<p></p>
+<%= link_to 'Voltar', controller: 'welcome' %>
+</p>

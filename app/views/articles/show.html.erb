@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @blog_item.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @blog_item.text %>
+</p>
+<p>
+<%= link_to 'Voltar', articles_path %> | <%= link_to 'Editar', edit_article_path(@blog_item) %>
+</p>

@@ -1,5 +1,5 @@
 <p>
-  <strong>Title:</strong>
+  <strong>Title: </strong>
   <%= @blog_item.title %>
 </p>
  
@@ -7,6 +7,14 @@
   <strong>Text:</strong>
   <%= @blog_item.text %>
 </p>
+
+<h2> Comentários: </h2>
+<%= render @blog_item.comments %>
+
+<h2> Adicionar Comentário:</h2>
+<%= render "comments/form" %>
+
 <p>
-<%= link_to 'Voltar', articles_path %> | <%= link_to 'Editar', edit_article_path(@blog_item) %>
+<%= link_to 'Voltar', articles_path %> 
+| <%= link_to 'Editar', edit_article_path(@blog_item) %>
 </p>

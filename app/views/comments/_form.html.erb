@@ -1,0 +1,15 @@
+<%= form_for([@blog_item, @blog_item.comments.build]) do |f| %>
+<p>
+  <%= f.label :nome %><br>
+  <%= f.text_field :commenter %>
+</p>
+
+<p>
+  <%= f.label :comentário %><br>
+  <%= f.text_field :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

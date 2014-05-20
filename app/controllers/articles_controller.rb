@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+http_basic_authenticate_with name: "marcelo", password: "123",
+except: [:index, :show]
+
   def new
     @blog_item = Article.new
   end
@@ -39,6 +42,13 @@ class ArticlesController < ApplicationController
   def index
     @blog_item = Article.all
     #binding.pry
+  end
+
+  def destroy
+    @blog_item = Article.find(params[:id])
+    @blog_item.destroy
+
+    redirect_to articles_path
   end
 
   private

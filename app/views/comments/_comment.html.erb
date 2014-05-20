@@ -1,0 +1,17 @@
+<table>
+<p>
+  <strong>Nome: </strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <strong>Comentário: </strong>
+  <%= comment.body %>
+<p>
+
+<p>
+  <%= link_to 'Excluir', [comment.article, comment],
+                                    method: :delete,
+                                    data: {confirm: "Confirma exclusão do comentário?"} %>
+</p>
+</table>
